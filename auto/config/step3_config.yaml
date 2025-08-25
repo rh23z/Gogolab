@@ -1,0 +1,22 @@
+threads: 4
+output_root: data/processed_data/step3
+
+s1_extract:
+  summary_file: data/processed_data/step1/step1_function_filtered_df.tsv
+  upstream: 10000
+  downstream: 10000
+
+s2_split:
+  parts: 20
+
+s3_detailed_hmm:
+  hmm_dir: /work/zhangrh/globalsource/Pfam-A
+  #Evalue_threshold: 1e-2
+  Score_threshold: 6
+
+s5_emapper:
+  emapper_py: /work/zhangrh/software/eggnog-mapper/emapper.py
+
+
+s7_integrate:
+  enable: true

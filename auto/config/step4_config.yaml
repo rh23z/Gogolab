@@ -1,0 +1,9 @@
+threads: 8
+output_root: ./data/processed_data/step4
+
+s1_merge_all_info:
+  subset_threshold: [98, 90, 50]
+  output_prefix: final
+
+s2_generate_report:
+  parts: 20

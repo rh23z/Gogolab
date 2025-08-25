@@ -1,0 +1,40 @@
+threads: 4
+parallel_jobs: 32
+output_root: "./data/processed_data/step1/"
+
+hmmsearch:
+  - source: "archaea_assembly_summary"
+    hmm_dir: "./data/hmm"
+    fasta_dir: "/work/data_share/NCBI_zrh/archaea_assembly_summary_prodigal/"
+  - source: "bacteria_assembly_summary"
+    hmm_dir: "./data/hmm"
+    fasta_dir: "/work/data_share/NCBI_zrh/bacteria_assembly_summary_prodigal/"
+  - source: "metagenomes_assembly_summary"
+    hmm_dir: "./data/hmm"
+    fasta_dir: "/work/data_share/NCBI_zrh/metagenomes_assembly_summary_prodigal/"
+  - source: "phagescope"
+    hmm_dir: "./data/hmm/"
+    fasta_dir: "/work/data/phage/phagescope_all_prodigal/"
+  - source: "viral_assembly_summary"
+    hmm_dir: "./data/hmm/"
+    fasta_dir: "/work/data_share/NCBI_zrh/viral_assembly_summary_prodigal/"
+  - source: "BGItrans"
+    hmm_dir: "./data/hmm/"
+    fasta_dir: "/work/data/BGItrans/final_bins_faa/"
+  - source: "refseq_eukaryotic"
+    hmm_dir: "./data/hmm/"
+    fasta_dir: "/work/data_share/NCBI_refseq/eukaryotic/translated_cds.faa/"
+
+
+filter:
+  score_cutoff: 16.0
+
+function_filter:
+  cov_threshold: 0.2
+  min_target_len: 50
+  and_filters: []
+  any_filters: ["model_name"]
+  threads: 8
+
+echo "Step1.1: HMMSEARCH batch processing starts"
+

@@ -1,0 +1,14 @@
+output_root: "./data/processed_data/step2/"
+
+# 临时目录（用于 MMseqs）
+tmp_dir: "/work/zhangrh/couple_procject/tmp/mmseqs_tmp"
+
+# 线程数
+threads: 32
+
+# 聚类步骤
+clustering:
+  # identity 阈值列表
+  identity: [100, 98, 90, 70, 50]
+  # 覆盖度阈值
+  coverage: 0.8

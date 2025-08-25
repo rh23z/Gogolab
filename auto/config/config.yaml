@@ -1,0 +1,12 @@
+root_dir: "."
+log_dir: "./log"
+data_dir: "./data"
+scripts_dir: "./scripts"
+result_dir: "./result"
+
+step1_config: "./config/step1_config_gx.yaml"
+step2_config: "./config/step2_config.yaml"
+step3_config: "./config/step3_config.yaml"
+step4_config: "./config/step4_config.yaml"
+
+

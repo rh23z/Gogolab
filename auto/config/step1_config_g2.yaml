@@ -1,0 +1,27 @@
+threads: 16
+parallel_jobs: 48
+output_root: "./data/processed_data/step1/"
+
+hmmsearch:
+  - source: "CRBC"
+    hmm_dir: "./data/hmm"
+    fasta_dir: "/work/data/CRBC_genome/faa"
+  - source: "MGnify"
+    hmm_dir: "./data/hmm"
+    fasta_dir: "/work/data/MGnify/faa/"
+  - source: "IMGM"
+    hmm_dir: "./data/hmm"
+    fasta_dir: "/work/data/IMGM_1025/faa/"
+
+filter:
+  score_cutoff: 16.0
+
+function_filter:
+  cov_threshold: 0.2
+  min_target_len: 50
+  and_filters: []
+  any_filters: ["model_name"]
+  threads: 8
+
+echo "Step1.1: HMMSEARCH batch processing starts"
+
