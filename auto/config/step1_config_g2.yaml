@@ -1,4 +1,4 @@
-threads: 16
+threads: 4
 parallel_jobs: 48
 output_root: "./data/processed_data/step1/"
 
@@ -21,7 +21,7 @@ function_filter:
   min_target_len: 50
   and_filters: []
   any_filters: ["model_name"]
-  threads: 8
+  threads: 32
 
 echo "Step1.1: HMMSEARCH batch processing starts"
 

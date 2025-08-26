@@ -1,4 +1,4 @@
-threads: 4
+threads: 16
 parallel_jobs: 32
 output_root: "./data/processed_data/step1/"
 

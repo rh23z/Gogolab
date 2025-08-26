@@ -1,4 +1,4 @@
-threads: 4
+threads: 64
 output_root: data/processed_data/step3
 
 s1_extract:
