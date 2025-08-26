@@ -1,4 +1,4 @@
-# Novel-System Discovery Pipeline
+# Novel-System Discovery Pipeline 
 
 A modular four-step pipeline (HMM search, sequence filtering & clustering, neighborhood extraction, detailed annotation, and reporting) orchestrated by `main.sh`.  
 
@@ -34,6 +34,28 @@ data/                        # Input HMM & FASTA files
 
 ---
 
+## Conda Environment Setup
+
+This project provides a reproducible Conda environment (`environment.yaml`) with all dependencies.
+
+### 1. Create the environment
+```bash
+# with conda (enable libmamba solver for speed)
+cd ./auto
+conda env create -f environment.yaml
+```
+By default, this will create an environment named **`auto`** (from `name: auto` in YAML).
+
+To override the name:
+```bash
+conda env create -n myenv -f environment.yaml
+```
+
+### 2. Activate the environment
+```bash
+conda activate auto
+```
+---
 ## Configuration
 
 ### Global (`config/config.yaml`)
@@ -79,14 +101,18 @@ Points to:
 
 1. Prepare configs  
    - Update `config/config.yaml` with your paths (root, log, result, etc.)
+   - Place the hmm files to be analyzed in `data/hmm/`.
    - Edit each step’s YAML to point to your HMM/FASTA directories and set thresholds.
 
-2. Run pipeline
+2. Install environment  
+   - Follow [Conda Environment Setup](#conda-environment-setup) above.
+
+3. Run pipeline
    ```bash
    bash main.sh
    ```
 
-3. Monitor logs (all under `./log/`)  
+4. Monitor logs (all under `./log/`)  
    Example: `step1_hmmsearch_<source>.log`, `step2_mmseqs_cluster.log`, `step3_s1_extract.log`
 
 ---
