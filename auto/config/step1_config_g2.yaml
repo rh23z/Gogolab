@@ -20,7 +20,7 @@ function_filter:
   cov_threshold: 0.2
   min_target_len: 50
   and_filters: []
-  any_filters: ["model_name"]
+  any_filters: ["xxx_model_name, example: PF12686"]
   threads: 32
 
 echo "Step1.1: HMMSEARCH batch processing starts"

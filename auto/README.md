@@ -9,7 +9,8 @@ A modular four-step pipeline (HMM search, sequence filtering & clustering, neigh
 ```
 config/                     # All YAML configuration files
   ├── config.yaml            # Global config, points to step configs
-  ├── step1_config_g2.yaml   # Step 1: HMM search + filters
+  ├── step1_config_g2.yaml   # Step 1: HMM search + filters + database source on g2
+  ├── step1_config_g3.yaml   # Step 1: HMM search + filters + database source on g3
   ├── step2_config.yaml      # Step 2: Sequence extraction + MMseqs clustering
   ├── step3_config.yaml      # Step 3: Flanking gene extraction + annotation
   └── step4_config.yaml      # Step 4: Reporting
@@ -101,6 +102,8 @@ Points to:
 
 1. Prepare configs  
    - Update `config/config.yaml` with your paths (root, log, result, etc.)
+     - Seclect and edit the appropriate `step1_config_*.yaml` for your HMM/FASTA sources by the sever that you are using.
+     -  `step1_config_*.yaml` shows the all data source, **but it is recommended that you only use the IMGM and MGnify databases on g2**
    - Place the hmm files to be analyzed in `data/hmm/`.
    - Edit each step’s YAML to point to your HMM/FASTA directories and set thresholds.
 
